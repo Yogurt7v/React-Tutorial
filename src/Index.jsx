@@ -1,9 +1,13 @@
-import * as  React from 'react';
-import * as ReactDOM from 'react-dom';
+import * as React from 'react';
+import { createRoot } from 'react-dom/client';
 import { Header } from './Header';
 
 window.addEventListener('load', () => {
-    ReactDOM.render(<Header />, document.getElementById('react_root'));
+    const container = document.getElementById('react_root');
+    if (container) {
+        const root = createRoot(container);
+        root.render(<Header />);
+    }
 })
 
 
